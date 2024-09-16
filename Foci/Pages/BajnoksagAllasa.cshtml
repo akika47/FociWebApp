@@ -1,0 +1,77 @@
+﻿@page
+@model Foci.Pages.BajnoksagAllasaModel
+
+@{
+    ViewData["Title"] = "BajnoksagAllasa";
+}
+
+<h1>BajnoksagAllasa</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].Helyezes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].CsapatNev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].MerkozesekSzama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].Gyozelem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].Vereseg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].Pontszam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].LottGol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allas[0].KapottGol)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Allas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Helyezes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CsapatNev)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MerkozesekSzama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gyozelem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vereseg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pontszam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LottGol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KapottGol)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

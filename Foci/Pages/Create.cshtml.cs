@@ -9,11 +9,11 @@ using Foci.Models;
 
 namespace Foci.Pages
 {
-    public class MeccsHozzaadasModel : PageModel
+    public class CreateModel : PageModel
     {
         private readonly Foci.Models.FociDbContext _context;
 
-        public MeccsHozzaadasModel(Foci.Models.FociDbContext context)
+        public CreateModel(Foci.Models.FociDbContext context)
         {
             _context = context;
         }

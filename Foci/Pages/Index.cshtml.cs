@@ -1,20 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Foci.Models;
 
 namespace Foci.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly Foci.Models.FociDbContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(Foci.Models.FociDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public IList<Meccs> Meccs { get;set; } = default!;
 
+        public async Task OnGetAsync()
+        {
+            Meccs = await _context.Meccsek.ToListAsync();
         }
     }
 }
