@@ -12,6 +12,7 @@ namespace Foci.Pages
 
     public record class Allas
     {
+        //valami
         private int helyezes;
         private string csapatNev;
         private int merkozesekSzama;
